@@ -1,0 +1,32 @@
+{
+    "definition": {
+        "name": "AI",
+        "class": "AI",
+        "inputs": [
+            {
+                "name": "market",
+                "type": "STRING"
+            },
+            {
+                "name": "account",
+                "type": "STRING"
+            },
+            {
+                "name": "event",
+                "type": "STRING"
+            }
+        ],
+        "outputs": [
+            {
+                "name": "order",
+                "type": "STRING"
+            }
+        ],
+        "attributes": [
+
+        ],
+        "services": [
+
+        ]
+    }
+}

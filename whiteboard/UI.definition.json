@@ -1,0 +1,44 @@
+{
+    "definition": {
+        "name": "UI",
+        "class": "UI",
+        "inputs": [
+            {
+                "name": "market",
+                "type": "STRING"
+            },
+            {
+                "name": "view_p1",
+                "type": "STRING"
+            },
+            {
+                "name": "view_p2",
+                "type": "STRING"
+            },
+            {
+                "name": "news_event",
+                "type": "STRING"
+            }
+        ],
+        "outputs": [
+            {
+                "name": "key_p1",
+                "type": "STRING"
+            },
+            {
+                "name": "key_p2",
+                "type": "STRING"
+            },
+            {
+                "name": "command",
+                "type": "STRING"
+            }
+        ],
+        "attributes": [
+
+        ],
+        "services": [
+
+        ]
+    }
+}

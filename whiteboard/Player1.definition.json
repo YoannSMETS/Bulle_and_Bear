@@ -1,0 +1,32 @@
+{
+    "definition": {
+        "name": "Player1",
+        "class": "Player1",
+        "inputs": [
+            {
+                "name": "key_event",
+                "type": "STRING"
+            },
+            {
+                "name": "account",
+                "type": "STRING"
+            }
+        ],
+        "outputs": [
+            {
+                "name": "order",
+                "type": "STRING"
+            },
+            {
+                "name": "view",
+                "type": "STRING"
+            }
+        ],
+        "attributes": [
+
+        ],
+        "services": [
+
+        ]
+    }
+}

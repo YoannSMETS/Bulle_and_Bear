@@ -1,0 +1,28 @@
+{
+    "definition": {
+        "name": "Journal",
+        "class": "Journal",
+        "inputs": [
+            {
+                "name": "new_game",
+                "type": "STRING"
+            },
+            {
+                "name": "month_start",
+                "type": "INTEGER"
+            }
+        ],
+        "outputs": [
+            {
+                "name": "event",
+                "type": "STRING"
+            }
+        ],
+        "attributes": [
+
+        ],
+        "services": [
+
+        ]
+    }
+}

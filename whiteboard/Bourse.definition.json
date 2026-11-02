@@ -1,0 +1,52 @@
+{
+    "definition": {
+        "name": "Bourse",
+        "class": "Bourse",
+        "inputs": [
+            {
+                "name": "command",
+                "type": "STRING"
+            },
+            {
+                "name": "event",
+                "type": "STRING"
+            },
+            {
+                "name": "order_p1",
+                "type": "STRING"
+            },
+            {
+                "name": "order_p2",
+                "type": "STRING"
+            }
+        ],
+        "outputs": [
+            {
+                "name": "market",
+                "type": "STRING"
+            },
+            {
+                "name": "account_p1",
+                "type": "STRING"
+            },
+            {
+                "name": "account_p2",
+                "type": "STRING"
+            },
+            {
+                "name": "month_start",
+                "type": "INTEGER"
+            },
+            {
+                "name": "new_game",
+                "type": "STRING"
+            }
+        ],
+        "attributes": [
+
+        ],
+        "services": [
+
+        ]
+    }
+}

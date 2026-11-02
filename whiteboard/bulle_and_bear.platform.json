@@ -1,0 +1,338 @@
+{
+  "agents": [
+    {
+      "name": "Bourse",
+      "definition": {
+        "definition": {
+          "name": "Bourse",
+          "class": "Bourse",
+          "inputs": [
+            {
+              "name": "command",
+              "type": "STRING"
+            },
+            {
+              "name": "event",
+              "type": "STRING"
+            },
+            {
+              "name": "order_p1",
+              "type": "STRING"
+            },
+            {
+              "name": "order_p2",
+              "type": "STRING"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "market",
+              "type": "STRING"
+            },
+            {
+              "name": "account_p1",
+              "type": "STRING"
+            },
+            {
+              "name": "account_p2",
+              "type": "STRING"
+            },
+            {
+              "name": "month_start",
+              "type": "INTEGER"
+            },
+            {
+              "name": "new_game",
+              "type": "STRING"
+            }
+          ],
+          "attributes": [],
+          "services": []
+        }
+      },
+      "mapping": {
+        "mappings": [
+          {
+            "fromInput": "event",
+            "toAgent": "Journal",
+            "toOutput": "event"
+          },
+          {
+            "fromInput": "order_p1",
+            "toAgent": "Player1",
+            "toOutput": "order"
+          },
+          {
+            "fromInput": "order_p2",
+            "toAgent": "Player2",
+            "toOutput": "order"
+          },
+          {
+            "fromInput": "order_p2",
+            "toAgent": "AI",
+            "toOutput": "order"
+          },
+          {
+            "fromInput": "command",
+            "toAgent": "UI",
+            "toOutput": "command"
+          }
+        ],
+        "splits": []
+      }
+    },
+    {
+      "name": "Journal",
+      "definition": {
+        "definition": {
+          "name": "Journal",
+          "class": "Journal",
+          "inputs": [
+            {
+              "name": "new_game",
+              "type": "STRING"
+            },
+            {
+              "name": "month_start",
+              "type": "INTEGER"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "event",
+              "type": "STRING"
+            }
+          ],
+          "attributes": [],
+          "services": []
+        }
+      },
+      "mapping": {
+        "mappings": [
+          {
+            "fromInput": "new_game",
+            "toAgent": "Bourse",
+            "toOutput": "new_game"
+          },
+          {
+            "fromInput": "month_start",
+            "toAgent": "Bourse",
+            "toOutput": "month_start"
+          }
+        ],
+        "splits": []
+      }
+    },
+    {
+      "name": "Player1",
+      "definition": {
+        "definition": {
+          "name": "Player1",
+          "class": "Player1",
+          "inputs": [
+            {
+              "name": "key_event",
+              "type": "STRING"
+            },
+            {
+              "name": "account",
+              "type": "STRING"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "order",
+              "type": "STRING"
+            },
+            {
+              "name": "view",
+              "type": "STRING"
+            }
+          ],
+          "attributes": [],
+          "services": []
+        }
+      },
+      "mapping": {
+        "mappings": [
+          {
+            "fromInput": "account",
+            "toAgent": "Bourse",
+            "toOutput": "account_p1"
+          },
+          {
+            "fromInput": "key_event",
+            "toAgent": "UI",
+            "toOutput": "key_p1"
+          }
+        ],
+        "splits": []
+      }
+    },
+    {
+      "name": "Player2",
+      "definition": {
+        "definition": {
+          "name": "Player2",
+          "class": "Player2",
+          "inputs": [
+            {
+              "name": "key_event",
+              "type": "STRING"
+            },
+            {
+              "name": "account",
+              "type": "STRING"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "order",
+              "type": "STRING"
+            },
+            {
+              "name": "view",
+              "type": "STRING"
+            }
+          ],
+          "attributes": [],
+          "services": []
+        }
+      },
+      "mapping": {
+        "mappings": [
+          {
+            "fromInput": "account",
+            "toAgent": "Bourse",
+            "toOutput": "account_p2"
+          },
+          {
+            "fromInput": "key_event",
+            "toAgent": "UI",
+            "toOutput": "key_p2"
+          }
+        ],
+        "splits": []
+      }
+    },
+    {
+      "name": "AI",
+      "definition": {
+        "definition": {
+          "name": "AI",
+          "class": "AI",
+          "inputs": [
+            {
+              "name": "market",
+              "type": "STRING"
+            },
+            {
+              "name": "account",
+              "type": "STRING"
+            },
+            {
+              "name": "event",
+              "type": "STRING"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "order",
+              "type": "STRING"
+            }
+          ],
+          "attributes": [],
+          "services": []
+        }
+      },
+      "mapping": {
+        "mappings": [
+          {
+            "fromInput": "account",
+            "toAgent": "Bourse",
+            "toOutput": "account_p2"
+          },
+          {
+            "fromInput": "market",
+            "toAgent": "Bourse",
+            "toOutput": "market"
+          },
+          {
+            "fromInput": "event",
+            "toAgent": "Journal",
+            "toOutput": "event"
+          }
+        ],
+        "splits": []
+      }
+    },
+    {
+      "name": "UI",
+      "definition": {
+        "definition": {
+          "name": "UI",
+          "class": "UI",
+          "inputs": [
+            {
+              "name": "market",
+              "type": "STRING"
+            },
+            {
+              "name": "view_p1",
+              "type": "STRING"
+            },
+            {
+              "name": "view_p2",
+              "type": "STRING"
+            },
+            {
+              "name": "news_event",
+              "type": "STRING"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "key_p1",
+              "type": "STRING"
+            },
+            {
+              "name": "key_p2",
+              "type": "STRING"
+            },
+            {
+              "name": "command",
+              "type": "STRING"
+            }
+          ],
+          "attributes": [],
+          "services": []
+        }
+      },
+      "mapping": {
+        "mappings": [
+          {
+            "fromInput": "market",
+            "toAgent": "Bourse",
+            "toOutput": "market"
+          },
+          {
+            "fromInput": "view_p1",
+            "toAgent": "Player1",
+            "toOutput": "view"
+          },
+          {
+            "fromInput": "view_p2",
+            "toAgent": "Player2",
+            "toOutput": "view"
+          },
+          {
+            "fromInput": "news_event",
+            "toAgent": "Journal",
+            "toOutput": "event"
+          }
+        ],
+        "splits": []
+      }
+    }
+  ]
+}

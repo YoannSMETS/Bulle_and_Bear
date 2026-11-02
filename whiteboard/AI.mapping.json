@@ -1,0 +1,22 @@
+{
+    "mappings": [
+        {
+            "fromInput": "account",
+            "toAgent": "Bourse",
+            "toOutput": "account_p2"
+        },
+        {
+            "fromInput": "market",
+            "toAgent": "Bourse",
+            "toOutput": "market"
+        },
+        {
+            "fromInput": "event",
+            "toAgent": "Journal",
+            "toOutput": "event"
+        }
+    ],
+    "splits": [
+
+    ]
+}

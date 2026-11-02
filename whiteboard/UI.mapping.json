@@ -1,0 +1,27 @@
+{
+    "mappings": [
+        {
+            "fromInput": "market",
+            "toAgent": "Bourse",
+            "toOutput": "market"
+        },
+        {
+            "fromInput": "view_p1",
+            "toAgent": "Player1",
+            "toOutput": "view"
+        },
+        {
+            "fromInput": "view_p2",
+            "toAgent": "Player2",
+            "toOutput": "view"
+        },
+        {
+            "fromInput": "news_event",
+            "toAgent": "Journal",
+            "toOutput": "event"
+        }
+    ],
+    "splits": [
+
+    ]
+}

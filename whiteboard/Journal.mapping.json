@@ -1,0 +1,17 @@
+{
+    "mappings": [
+        {
+            "fromInput": "new_game",
+            "toAgent": "Bourse",
+            "toOutput": "new_game"
+        },
+        {
+            "fromInput": "month_start",
+            "toAgent": "Bourse",
+            "toOutput": "month_start"
+        }
+    ],
+    "splits": [
+
+    ]
+}

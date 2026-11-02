@@ -1,0 +1,32 @@
+{
+    "mappings": [
+        {
+            "fromInput": "event",
+            "toAgent": "Journal",
+            "toOutput": "event"
+        },
+        {
+            "fromInput": "order_p1",
+            "toAgent": "Player1",
+            "toOutput": "order"
+        },
+        {
+            "fromInput": "order_p2",
+            "toAgent": "Player2",
+            "toOutput": "order"
+        },
+        {
+            "fromInput": "order_p2",
+            "toAgent": "AI",
+            "toOutput": "order"
+        },
+        {
+            "fromInput": "command",
+            "toAgent": "UI",
+            "toOutput": "command"
+        }
+    ],
+    "splits": [
+
+    ]
+}
